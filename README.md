@@ -42,7 +42,7 @@ streamevents/
 - Entorn virtual creat (`python -m venv venv`)
 
 ## 🚀 Instal·lació ràpida
-```bash
+
 # Clonar el repositori
 git clone https://github.com/jasonokoro10/streamevents.git
 cd streamevents
@@ -61,31 +61,25 @@ python manage.py createsuperuser
 ---
 
 ### 7. Variables d'entorn
-```markdown
-## 🔐 Variables d'entorn (env.example)
-Crea un fitxer `.env` amb informació sensible. Exemple:
 
-```env
-DEBUG=True
-SECRET_KEY=canvia_aqui_la_clau
-DATABASE_URL=sqlite:///db.sqlite3
-# O opcional per MongoDB:
-# DATABASE_URL=mongodb://localhost:27017/streamevents_db
+## 🔐 Variables d'entorn (env.example)
+
+SECRET_KEY=12345
+DEBUG=1
+ALLOWED_HOSTS=localhost,127.0.0.1
+MONGO_URL=mongodb://localhost:27017
+DB_NAME=streamevents_db
 
 ---
 
 ### 8. Superusuari
-```markdown
-## 👤 Superusuari
-Per accedir al panell d’administració:
 
-```bash
 python manage.py createsuperuser
 
 ---
 
 ### 9. Migrar a MongoDB
-```markdown
+
 ## 🗃️ Migrar a MongoDB (opcional futur)
 - Instal·lar `djongo` i `pymongo`
 - Canviar `settings.py` → `ENGINE = 'djongo'`
@@ -103,19 +97,10 @@ python manage.py createsuperuser
 
 ## 💾 Fixtures (exemple)
 Per carregar dades inicials:
-```bash
+
 python manage.py loaddata fixtures/exemple.json
 
 ---
 
 ### 12. Seeds
-```markdown
-## 🌱 Seeds (exemple d'script)
-Exemple: `seeds/create_groups.py`
 
-```python
-from django.contrib.auth.models import Group
-
-def run():
-    Group.objects.get_or_create(name="Organitzadors")
-    Group.objects.get_or_create(name="Participants")
