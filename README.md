@@ -24,17 +24,17 @@ auth avançada, etc.).
 
 ## 📂 Estructura Simplificada
 streamevents/
-│── config/              # Configuració principal (settings, urls, etc.)
-│── users/               # App personalitzada d'usuaris
-│── templates/           # Plantilles globals (base.html, layouts, etc.)
-│── static/              # Fitxers estàtics (css, js, img)
-│── media/               # Pujades d’usuari (IGNORAT al Git)
-│── fixtures/            # (Opcional) JSON amb dades d'exemple
-│── seeds/               # (Opcional) Scripts per omplir dades
-│── requirements.txt     # Dependències del projecte
-│── .env                 # Variables d’entorn (privat)
-│── env.example          # Exemple d’entorn (sense secrets)
-│── README.md            # Documentació del projecte
+│── config/ # Configuració principal (settings, urls, etc.)
+│── users/ # App personalitzada d'usuaris
+│── templates/ # Plantilles globals (base.html, layouts, etc.)
+│── static/ # Fitxers estàtics (css, js, img)
+│── media/ # Pujades d’usuari (IGNORAT al Git)
+│── fixtures/ # (Opcional) JSON amb dades d'exemple
+│── seeds/ # (Opcional) Scripts per omplir dades
+│── requirements.txt # Dependències del projecte
+│── .env # Variables d’entorn (privat)
+│── env.example # Exemple d’entorn (sense secrets)
+│── README.md # Documentació del projecte
 
 ## ✅ Requisits previs
 - Python 3.13 instal·lat
