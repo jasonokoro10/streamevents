@@ -6,6 +6,8 @@ Aplicació Django per gestionar esdeveniments i usuaris
 etc.). Opcionalment es pot integrar MongoDB (via djongo)
 més endavant.
 
+---
+
 ## ✨ Objectius
 - Practicar un projecte Django modular.
 - Treballar amb un usuari personalitzat (app users).
@@ -15,12 +17,16 @@ Git.
 - Preparar el terreny per a futures funcionalitats (API,
 auth avançada, etc.).
 
+---
+
 ## 🧱 Stack Principal
 - Python 3.13
 - Django 5.x
 - SQLite (per defecte) / MongoDB (opcional via Djongo)
 - HTML, CSS i JS (templates i estàtics)
 - Git & GitHub (control de versions)
+
+---
 
 ## 📂 Estructura Simplificada
 streamevents/
@@ -36,31 +42,35 @@ streamevents/
 │── env.example # Exemple d’entorn (sense secrets)
 │── README.md # Documentació del projecte
 
+---
+
 ## ✅ Requisits previs
 - Python 3.13 instal·lat
 - Git instal·lat
 - Entorn virtual creat (`python -m venv venv`)
 
+---
+
 ## 🚀 Instal·lació ràpida
 
-# Clonar el repositori
+### Clonar el repositori
 `git clone https://github.com/jasonokoro10/streamevents.git`
 `cd streamevents`
 
-# Activar l'entorn virtual
+### Activar l'entorn virtual
 `.\venv\Scripts\activate`   # Windows
 `source venv/bin/activate`  # Linux/Mac
 
-# Instal·lar dependències
+### Instal·lar dependències
 `pip install -r requirements.txt`
 
-# Migracions i superusuari
+### Migracions i superusuari
 `python manage.py migrate`
 `python manage.py createsuperuser`
 
 ---
 
-### 7. Variables d'entorn
+## 7. Variables d'entorn
 
 ## 🔐 Variables d'entorn (env.example)
 
@@ -72,22 +82,22 @@ DB_NAME=streamevents_db
 
 ---
 
-### 8. Superusuari
+## 8. Superusuari
 
 `python manage.py createsuperuser`
 
 ---
 
-### 9. Migrar a MongoDB
+## 9. Migrar a MongoDB
 
-## 🗃️ Migrar a MongoDB (opcional futur)
+### 🗃️ Migrar a MongoDB (opcional futur)
 - Instal·lar `djongo` i `pymongo`
 - Canviar `settings.py` → `ENGINE = 'djongo'`
 - Configurar `CLIENT` amb `mongodb://localhost:27017`
 
 ---
 
-## 🛠️ Comandes útils
+### 🛠️ Comandes útils
 - Arrencar el servidor: `python manage.py runserver`
 - Crear migracions: `python manage.py makemigrations`
 - Aplicar migracions: `python manage.py migrate`
@@ -99,24 +109,24 @@ DB_NAME=streamevents_db
 
 Per carregar dades inicials (grups i usuaris) farem servir **fixtures** en format JSON.
 
-## Primer els grups:
+### Primer els grups:
 
 `python manage.py loaddata 01_groups.json`
 
-## Després els usuaris:
+### Després els usuaris:
 
 `python manage.py loaddata 02_users.json`
 
-# Carrega totes les fixtures de l'app users
+#### Carrega totes les fixtures de l'app users
 `python manage.py loaddata users/fixtures/*.json`
 
-# O especificar l'ordre
+#### O especificar l'ordre
 `python manage.py loaddata 01_groups 02_users`
 
-## Verificar la càrrega
+### Verificar la càrrega
 
-# Comprovar grups
+#### Comprovar grups
 `python manage.py shell -c "from django.contrib.auth.models import Group; print(Group.objects.all())"`
 
-# Comprovar usuaris
+#### Comprovar usuaris
 `python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); print(User.objects.all())"`
