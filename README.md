@@ -44,19 +44,19 @@ streamevents/
 ## 🚀 Instal·lació ràpida
 
 # Clonar el repositori
-git clone https://github.com/jasonokoro10/streamevents.git
-cd streamevents
+`git clone https://github.com/jasonokoro10/streamevents.git`
+`cd streamevents`
 
 # Activar l'entorn virtual
-.\venv\Scripts\activate   # Windows
-source venv/bin/activate  # Linux/Mac
+`.\venv\Scripts\activate`   # Windows
+`source venv/bin/activate`  # Linux/Mac
 
 # Instal·lar dependències
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 # Migracions i superusuari
-python manage.py migrate
-python manage.py createsuperuser
+`python manage.py migrate`
+`python manage.py createsuperuser`
 
 ---
 
@@ -74,7 +74,7 @@ DB_NAME=streamevents_db
 
 ### 8. Superusuari
 
-python manage.py createsuperuser
+`python manage.py createsuperuser`
 
 ---
 
@@ -101,22 +101,22 @@ Per carregar dades inicials (grups i usuaris) farem servir **fixtures** en forma
 
 ## Primer els grups:
 
-python manage.py loaddata 01_groups.json
+`python manage.py loaddata 01_groups.json`
 
 ## Després els usuaris:
 
-python manage.py loaddata 02_users.json
+`python manage.py loaddata 02_users.json`
 
 # Carrega totes les fixtures de l'app users
-python manage.py loaddata users/fixtures/*.json
+`python manage.py loaddata users/fixtures/*.json`
 
 # O especificar l'ordre
-python manage.py loaddata 01_groups 02_users
+`python manage.py loaddata 01_groups 02_users`
 
 ## Verificar la càrrega
 
 # Comprovar grups
-python manage.py shell -c "from django.contrib.auth.models import Group; print(Group.objects.all())"
+`python manage.py shell -c "from django.contrib.auth.models import Group; print(Group.objects.all())"`
 
 # Comprovar usuaris
-python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); print(User.objects.all())"
+`python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); print(User.objects.all())"`
