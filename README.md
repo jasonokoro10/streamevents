@@ -95,12 +95,28 @@ python manage.py createsuperuser
 
 ---
 
-## 💾 Fixtures (exemple)
-Per carregar dades inicials:
+## 💾 Fixtures i Seeders - 🚀 Instruccions de càrrega
 
-python manage.py loaddata fixtures/exemple.json
+Per carregar dades inicials (grups i usuaris) farem servir **fixtures** en format JSON.
 
----
+## Primer els grups:
 
-### 12. Seeds
+python manage.py loaddata 01_groups.json
 
+## Després els usuaris:
+
+python manage.py loaddata 02_users.json
+
+# Carrega totes les fixtures de l'app users
+python manage.py loaddata users/fixtures/*.json
+
+# O especificar l'ordre
+python manage.py loaddata 01_groups 02_users
+
+## Verificar la càrrega
+
+# Comprovar grups
+python manage.py shell -c "from django.contrib.auth.models import Group; print(Group.objects.all())"
+
+# Comprovar usuaris
+python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); print(User.objects.all())"
